@@ -9,7 +9,7 @@ namespace APIPelicula.Data
         {
 
         }
-        public DbSet <Category> Category { get; set; }
+        public DbSet <Categoria> Categoria { get; set; }
     }
 
 }
