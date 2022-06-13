@@ -8,7 +8,7 @@ namespace APIPelicula.Models.Dtos
 
         [Required(ErrorMessage = "El nombre es Obligatorio")]
 
-        public string nombre { get; set; }
+        public string? nombre { get; set; }
 
         public string? FechaCreacion { get; set; }
     }
