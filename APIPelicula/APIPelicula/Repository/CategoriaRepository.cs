@@ -1,6 +1,7 @@
 ﻿using APIPelicula.Data;
 using APIPelicula.Models;
 using APIPelicula.Repository.IRepository;
+using System.Linq;
 
 namespace APIPelicula.Repository
 {
@@ -11,6 +12,11 @@ namespace APIPelicula.Repository
         public CategoriaRepository(ApplicationDbContext bd)
         {
             _bd = bd;
+        }
+
+        public bool ActualizarCategoria(Categoria categoria)
+        {
+            throw new NotImplementedException();
         }
 
         public bool BorrarCategoria(Categoria categoria)
@@ -36,14 +42,14 @@ namespace APIPelicula.Repository
             return _bd.Categoria.Any(c => c.Id == id);
         }
 
-        public ICollection<Categoria> GetCategorias()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Categoria GetCategory(int id)
+        public Categoria GetCategoria(int id)
         {
             return _bd.Categoria.FirstOrDefault(c => c.Id == id);
+        }
+
+        public ICollection<Categoria> GetCategorias()
+        {
+            return _bd.Categoria.OrderBy(c => c.Nombre).ToList();
         }
 
         public bool Guardar()
@@ -51,4 +57,5 @@ namespace APIPelicula.Repository
             return _bd.SaveChanges() >= 0 ? true : false;
         }
     }
+
 }
