@@ -1,2 +1,3 @@
 agregando linea de repositorio local
-segunda línea para forzar guardado.
+segunda línea para realizar guardado con pull.
+tercer línea de edición para realizar guardado con --force
